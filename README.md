@@ -11,22 +11,15 @@ This is a simple cryptocurrency converter application designed to help you easil
 
 ### Getting Started:
 
-Clone the repository:
-
-Bash
+1. Clone the repository:
 
 git clone https://github.com/[your-username]/Crypto_Tracker.git
-Install dependencies:
 
-Bash
+2. Install dependencies:
 
 cd Crypto_Tracker
 pip install -r requirements.txt
-[Optional: Set up API key]
 
-If the application uses an API (e.g., CoinGecko), you may need to obtain an API key and configure it in the application settings.
-Run the application:
-
-Bash
+4. Run the application:
 
 python app.py 
