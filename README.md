@@ -13,13 +13,13 @@ This is a simple cryptocurrency converter application designed to help you easil
 
 1. Clone the repository:
 
-git clone https://github.com/[your-username]/Crypto_Tracker.git
+   git clone https://github.com/[your-username]/Crypto_Tracker.git
 
 2. Install dependencies:
 
-cd Crypto_Tracker
-pip install -r requirements.txt
+   cd Crypto_Tracker
+   pip install -r requirements.txt
 
 4. Run the application:
 
-python app.py 
+   python app.py 
