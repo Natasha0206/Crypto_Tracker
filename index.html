@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+div {
+    display: block;
+}
+
+body {
+    width: 100%;
+    color: #26374c;
+    background: #f5f7fa;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: none;
+    padding-top: 50px;
+    margin-bottom: 5px;
+}
+
+.img-placed img{
+    width: 600px;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    padding: auto;
+    height: 600px;
+    display: block;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+input[type=text] {
+    width: 87%;
+    margin: auto;
+    display: block;
+    font-size: 1rem;
+    background: none;
+    line-height: 1.5;
+    padding: 12px;
+    border-radius: 6px;
+    color: #141e37;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+input[type=text]:focus {
+    border-color: rgb(0, 113, 235);
+}
+
+#select-field {
+    display: flex;
+    justify-content: space-between;
+}
+
+#fromCurrencyName {
+    margin-top: 0;
+    font-size: 16px;
+    color: #667c99;
+    font-weight: 600;
+    display: inline-block;
+    margin: 15px 40px 7.5px;
+}
+
+#fromCurrency {
+    width: 40%;
+}
+
+::placeholder {
+    font-size: 1rem;
+    color: rgb(20, 30, 55);
+}
+
+select {
+    margin: auto;
+    display: block;
+    font-size: 1rem;
+    padding: 12px;
+    background: none;
+    border-radius: 6px;
+    color: rgb(20, 30, 55);
+    border: 1px solid rgb(221, 221, 221);
+}
+
+select:focus {
+    border-color: rgb(0, 113, 235);
+}
+
+.primary-btn {
+    display: block;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 0px;
+    width: 87%;
+    cursor: pointer;
+    margin: auto;
+    outline-offset: 4px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition-property: background-color, border-color;
+    transition-duration: 0.3s;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: #212eee;
+    border: 2px solid #212eee;
+}
+
+.primary-btn:hover {
+    background-color: rgb(0, 113, 235);
+    border: 2px solid rgb(0, 113, 235);
+}
+
+#result {
+    color: #141e37;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+@media only screen and (max-width:780px) {
+    .container {
+        width: 340px;
+        height: 430px;
+    }
+
+    .img-placed img {
+        width: 340px;
+    }
+
+    #fromCurrency {
+        width: 38%;
+    }
+
+    select {
+        width: 38%;
+    }
+
+    #fromCurrencyName {
+        margin: 15px 22px 7.5px;
+    }
+}
+</style>
+
+<body>
+    <header></header>
+
+    <div class="container">
+
+        <div class="img-placed">
+            <img src="C:\Users\natas\Downloads\YgmULQP.png" alt="">
+        </div>
+
+        <form action="">
+
+            <input type="text" name="amount" id="amount" placeholder="Enter Amount" required>
+
+            <label id="fromCurrencyName"></label>
+            <div id="select-field">
+
+                <select name="fromCurrency" id="fromCurrency" onchange="showFromCurrencyName()">
+                    <option value="USD" selected="">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="INR">INR - India Rupee</option>
+                    <option value="NZD">NZD - New Zealand Dollar</option>
+                    <option value="CHF">CHF - Swiss Franc</option>
+                    <option value="ZAR">ZAR - South African Rand</option>
+                    <option value="BGN">BGN - Bulgarian Lev</option>
+                    <option value="SGD">SGD - Singapore Dollar</option>
+                    <option value="HKD">HKD - Hong Kong Dollar</option>
+                    <option value="SEK">SEK - Swedish Krona</option>
+                    <option value="THB">THB - Thai Baht</option>
+                    <option value="HUF">HUF - Hungarian Forint</option>
+                    <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+                    <option value="NOK">NOK - Norwegian Krone</option>
+                    <option value="MXN">MXN - Mexican Peso</option>
+                    <option value="GHS">GHS - Ghanians Cedi</option>
+                    <option value="NGN">NGN - Nigerian Naira</option>
+                </select>
+    
+                
+                <select name="toCurrency" id="toCurrency" onchange="showCurrencyName()">
+                    <option value="BTC">Bitcoin (BTC)</option>
+                    <option value="ETH">Ethereum (ETH)</option>
+                    <option value="USDT">Tether (USDT)</option>
+                    <option value="BNB">Binance Coin (BNB)</option>
+                    <option value="USDC">USD Coin (USDC)</option>
+                    <option value="XRP">XRP (XRP)</option>
+                    <option value="BUSD">Binance USD (BUSD)</option>
+                    <option value="ADA">cardano (ADA)</option>
+                    <option value="DOGE">Dogecoin (DOGE)</option>
+                    <option value="MATIC">Polygon (MATIC)</option>
+                    <option value="SOL">Solana (SOL)</option>
+                    <option value="DOT">Polkadot (DOT)</option>
+                    <option value="SHIB">Shiba Inu (SHIB)</option>
+                    <option value="LTC">Litecoin (LTC)</option>
+                    <option value="TRX">Tron (TRX)</option>
+                    <option value="AVAX">Avalanche (AVAX)</option>
+                </select>
+
+            </div>
+
+            <br>
+
+            <button type="button" id="convert" class="primary-btn">
+                Convert
+            </button>
+
+        </form>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function showCurrencyName() {
+          var selectCurrency = document.getElementById("toCurrency");
+          var currencyName = selectCurrency.options[selectCurrency.selectedIndex].text;
+          document.getElementById("currencyName").innerHTML = currencyName;
+        }
+  
+        function showFromCurrencyName() {
+          var selectFromCurrency = document.getElementById("fromCurrency");
+          var fromCurrencyName = selectFromCurrency.options[selectFromCurrency.selectedIndex].text;
+          document.getElementById("fromCurrencyName").innerHTML = fromCurrencyName;
+        }
+
+            const amountInput = document.querySelector('#amount');
+            const fromCurrencySelect = document.querySelector('#fromCurrency');
+            const toCurrencySelect = document.querySelector('#toCurrency');
+            const convertButton = document.querySelector('#convert');
+            const resultParagraph = document.querySelector('#result');
+            
+            convertButton.addEventListener('click', () => {
+            const amount = amountInput.value;
+            const fromCurrency = fromCurrencySelect.value;
+            const toCurrency = toCurrencySelect.value;
+            const apiKey = "685419b6bedfb725bb6af07ed3dd6fef8f20a83f05c066d1eb20a10c563c7801";
+            const apiUrl = `https://min-api.cryptocompare.com/data/price?fsym=${toCurrency}&tsyms=${fromCurrency}&api_key=${apiKey}`;
+          
+            fetch(apiUrl)
+              .then(response => response.json())
+              .then(data => {
+                const rate = data[fromCurrency];
+                const result = amount / rate;
+          
+                resultParagraph.innerHTML = `${amount} ${fromCurrency} is equal to ${result.toFixed(8)} ${toCurrency}`;
+              })
+              .catch(error => {
+                resultParagraph.innerHTML = "Error: Unable to fetch exchange rate.";
+                console.error(error);
+              });
+          });
+    </script>
+</body>
+</html>
